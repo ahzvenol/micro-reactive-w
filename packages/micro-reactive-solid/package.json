@@ -1,0 +1,34 @@
+{
+    "name": "micro-reactive-solid",
+    "version": "1.0.0",
+    "license": "MIT",
+    "packageManager": "pnpm@10.6.1",
+    "description": "Functional-style reactive wapper featuring arbitrary destructuring",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": {
+                "require": "./dist/index.d.cts",
+                "import": "./dist/index.d.ts"
+            },
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "build": "tsup",
+        "test": "vitest run",
+        "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
+        "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
+    },
+    "dependencies": {
+        "micro-reactive-wrapper": "workspace:*"
+    },
+    "devDependencies": {
+        "solid-js": "^1.4.0"
+    },
+    "peerDependencies": {
+        "solid-js": "^1.4.0"
+    }
+}
+

@@ -1,0 +1,28 @@
+{
+    "name": "micro-reactive-wrapper",
+    "version": "1.0.0",
+    "license": "MIT",
+    "packageManager": "pnpm@10.6.1",
+    "description": "Functional-style reactive wapper featuring arbitrary destructuring",
+    "type": "module",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": {
+                "require": "./dist/index.d.cts",
+                "import": "./dist/index.d.ts"
+            },
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
+        "test": "vitest run",
+        "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
+        "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
+    }
+}
+
