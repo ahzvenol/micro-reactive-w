@@ -1,8 +1,7 @@
 {
     "name": "micro-reactive",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "private": true,
-    "description": "Functional-style reactive wapper featuring arbitrary destructuring",
     "packageManager": "pnpm@10.6.1",
     "scripts": {
         "lint:fix": "npx pnpm recursive run lint:fix",
