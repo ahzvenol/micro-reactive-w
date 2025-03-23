@@ -7,7 +7,7 @@ import { Reactive, Signal } from './types'
  * @param path - 响应式对象的路径
  * @returns 信号函数
  */
-export function createSignalWapper<T>(root: object, path: PropertyKey[]): Signal<T> {
+export function createSignalWrapper<T>(root: object, path: PropertyKey[]): Signal<T> {
     function signal<U extends T>(): U
     function signal<U extends T>(value: (prev: T) => U): U
     function signal<U extends T>(value: Exclude<U, Function>): U
@@ -29,9 +29,9 @@ export function createSignalWapper<T>(root: object, path: PropertyKey[]): Signal
  * @param path - 响应式对象的路径
  * @returns 响应式代理
  */
-export function createReactiveWapper<T>(root: object, path: PropertyKey[]): Reactive<T> {
+export function createReactiveWrapper<T>(root: object, path: PropertyKey[]): Reactive<T> {
     const children = new Map<PropertyKey, Reactive<unknown>>()
-    const signal = createSignalWapper<T>(root, path)
+    const signal = createSignalWrapper<T>(root, path)
     const proxy = new Proxy(signal, {
         get(target, key) {
             const data = target()
@@ -54,10 +54,19 @@ export function createReactiveWapper<T>(root: object, path: PropertyKey[]): Reac
                 }
             }
             // 生成属性的响应式对象,缓存并返回
-            const child = createReactiveWapper<T>(root, [...path, key])
+            const child = createReactiveWrapper<T>(root, [...path, key])
             children.set(key, child)
             return child
         }
     }) as Reactive<T>
     return proxy
+}
+
+/**
+ * 使用响应式代理
+ * @param proxy - 响应式对象的创建函数
+ * @returns 响应式代理的创建函数
+ */
+export function useReactiveWrapper<T>(proxy: Function): (value: T) => Reactive<T> {
+    return (value) => createReactiveWrapper(proxy([value]), [0]);
 }
