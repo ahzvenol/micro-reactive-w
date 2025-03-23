@@ -10,26 +10,10 @@
 - Freely destructure or replace objects without losing reactivity.
 - Implemented by wrapping native framework APIs, with zero learning curve.
 
-## Installation
-
-### Solid:
-```
-npm i micro-reactive-solid
-pnpm i micro-reactive-solid
-yarn add micro-reactive-solid
-```
-
-### Vue:
-```
-npm i micro-reactive-vue
-pnpm i micro-reactive-vue
-yarn add micro-reactive-vue
-```
-
 ## Usage
 
 ```ts
-import { useReactive } from "micro-reactive";
+import { useReactive } from 'micro-reactive-solid'
 
 // Create reactive object
 const primitive = useReactive(1)

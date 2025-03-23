@@ -2,8 +2,17 @@
     "name": "micro-reactive-wrapper",
     "version": "1.0.0",
     "license": "MIT",
-    "packageManager": "pnpm@10.6.1",
-    "description": "Functional-style reactive wapper featuring arbitrary destructuring",
+    "author": "灵弦",
+    "description": "A functional-style reactive wrapper with flexible destructuring",
+    "keywords": [
+        "reactive",
+        "proxy",
+        "store",
+        "destructuring"
+    ],
+    "files": [
+        "dist"
+    ],
     "type": "module",
     "main": "dist/index.cjs",
     "module": "dist/index.js",

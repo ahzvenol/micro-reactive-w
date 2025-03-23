@@ -2,10 +2,22 @@
     "name": "micro-reactive-solid",
     "version": "1.0.0",
     "license": "MIT",
-    "private": true,
-    "description": "Functional-style reactive wapper featuring arbitrary destructuring",
-    "packageManager": "pnpm@10.6.1",
+    "author": "灵弦",
+    "description": "A functional-style reactive library for Vue.js with flexible destructuring support.",
+    "keywords": [
+        "reactive",
+        "proxy",
+        "store",
+        "destructuring",
+        "vue"
+    ],
+    "files": [
+        "dist"
+    ],
     "type": "module",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
     "exports": {
         ".": {
             "types": {
@@ -17,7 +29,7 @@
         }
     },
     "scripts": {
-        "build": "tsup",
+        "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
         "test": "vitest run",
         "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
         "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
