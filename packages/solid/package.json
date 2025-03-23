@@ -3,13 +3,13 @@
     "version": "1.0.0",
     "license": "MIT",
     "author": "灵弦",
-    "description": "A functional-style reactive library for Vue.js with flexible destructuring support.",
+    "description": "A functional-style reactive library for Solid.js with flexible destructuring support.",
     "keywords": [
         "reactive",
         "proxy",
         "store",
         "destructuring",
-        "vue"
+        "solid"
     ],
     "files": [
         "dist"
@@ -28,6 +28,11 @@
             "import": "./dist/index.js"
         }
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahzvenol/micro-reactive-w.git",
+        "directory": "packages/solid"
+    },
     "scripts": {
         "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
         "test": "vitest run",
@@ -38,10 +43,10 @@
         "micro-reactive-wrapper": "workspace:*"
     },
     "devDependencies": {
-        "vue": "^3.0.0"
+        "solid-js": "^1.4.0"
     },
     "peerDependencies": {
-        "vue": "^3.0.0"
+        "solid-js": "^1.4.0"
     }
 }
 

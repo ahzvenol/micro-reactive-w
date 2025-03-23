@@ -39,27 +39,27 @@ importers:
         specifier: ^0.23.4
         version: 0.23.4
 
-  packages/micro-reactive-solid:
+  packages/solid:
     dependencies:
       micro-reactive-wrapper:
         specifier: workspace:*
-        version: link:../micro-reactive-wrapper
+        version: link:../wrapper
     devDependencies:
       solid-js:
         specifier: ^1.4.0
         version: 1.9.5
 
-  packages/micro-reactive-vue:
+  packages/vue:
     dependencies:
       micro-reactive-wrapper:
         specifier: workspace:*
-        version: link:../micro-reactive-wrapper
+        version: link:../wrapper
     devDependencies:
       vue:
         specifier: ^3.0.0
         version: 3.5.13(typescript@5.8.2)
 
-  packages/micro-reactive-wrapper: {}
+  packages/wrapper: {}
 
 packages:
 

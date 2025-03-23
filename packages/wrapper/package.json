@@ -1,15 +1,14 @@
 {
-    "name": "micro-reactive-solid",
+    "name": "micro-reactive-wrapper",
     "version": "1.0.0",
     "license": "MIT",
     "author": "灵弦",
-    "description": "A functional-style reactive library for Solid.js with flexible destructuring support.",
+    "description": "A functional-style reactive wrapper with flexible destructuring",
     "keywords": [
         "reactive",
         "proxy",
         "store",
-        "destructuring",
-        "solid"
+        "destructuring"
     ],
     "files": [
         "dist"
@@ -28,20 +27,16 @@
             "import": "./dist/index.js"
         }
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahzvenol/micro-reactive-w.git",
+        "directory": "packages/wrapper"
+    },
     "scripts": {
         "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
         "test": "vitest run",
         "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
         "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
-    },
-    "dependencies": {
-        "micro-reactive-wrapper": "workspace:*"
-    },
-    "devDependencies": {
-        "solid-js": "^1.4.0"
-    },
-    "peerDependencies": {
-        "solid-js": "^1.4.0"
     }
 }
 

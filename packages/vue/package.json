@@ -1,14 +1,15 @@
 {
-    "name": "micro-reactive-wrapper",
+    "name": "micro-reactive-vue",
     "version": "1.0.0",
     "license": "MIT",
     "author": "灵弦",
-    "description": "A functional-style reactive wrapper with flexible destructuring",
+    "description": "A functional-style reactive library for Vue.js with flexible destructuring support.",
     "keywords": [
         "reactive",
         "proxy",
         "store",
-        "destructuring"
+        "destructuring",
+        "vue"
     ],
     "files": [
         "dist"
@@ -27,11 +28,25 @@
             "import": "./dist/index.js"
         }
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahzvenol/micro-reactive-w.git",
+        "directory": "packages/vue"
+    },
     "scripts": {
         "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
         "test": "vitest run",
         "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
         "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
+    },
+    "dependencies": {
+        "micro-reactive-wrapper": "workspace:*"
+    },
+    "devDependencies": {
+        "vue": "^3.0.0"
+    },
+    "peerDependencies": {
+        "vue": "^3.0.0"
     }
 }
 
