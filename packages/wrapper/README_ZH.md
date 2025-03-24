@@ -2,7 +2,7 @@
 
 **函数调用风格的响应式实现，基于[micro-reactive](https://github.com/wulongshe/micro-reactive)**
 
-[中文](/README.md) | [English](/README_EN.md)
+[中文](/README_ZH.md) | [English](/README.md)
 
 ## 特点
 

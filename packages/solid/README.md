@@ -2,7 +2,7 @@
 
 **A reactive implementation based on function-call style, inspired by [micro-reactive](https://github.com/wulongshe/micro-reactive)**
 
-[中文](/README.md) | [English](/README_EN.md)
+[中文](/README_ZH.md) | [English](/README.md)
 
 ## Features
 

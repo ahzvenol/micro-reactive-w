@@ -1,48 +1,46 @@
 # MICRO REACTIVE W
 
-**函数调用风格的响应式实现，基于[micro-reactive](https://github.com/wulongshe/micro-reactive)**
+**A reactive implementation based on function-call style, inspired by [micro-reactive](https://github.com/wulongshe/micro-reactive)**
 
-[中文](/README.md) | [English](/README_EN.md)
+[中文](/README_ZH.md) | [English](/README.md)
 
-## 特点
+## Features
 
-- 以相同的方式创建和使用响应式变量，而无需考虑是否为基本类型
-- 任意解构对象，替换对象，而不会丢失响应式
-- 通过包装框架原生API实现，无学习成本
+- Create and use reactive variables in consistent way, regardless of whether they are primitive types.
+- Freely destructure or replace objects without losing reactivity.
+- Implemented by wrapping native framework APIs, with zero learning curve.
 
-## 安装
+## Installation
 
-Solid：
-
+### Solid:
 ```
 npm i micro-reactive-solid
 pnpm i micro-reactive-solid
-yarn add i micro-reactive-solid
+yarn add micro-reactive-solid
 ```
 
-Vue:
-
+### Vue:
 ```
 npm i micro-reactive-vue
 pnpm i micro-reactive-vue
-yarn add i micro-reactive-vue
+yarn add micro-reactive-vue
 ```
 
-## 使用
+## Usage
 
 ```ts
 import { useReactive } from "micro-reactive";
 
-// 创建响应式对象
+// Create reactive object
 const primitive = useReactive(1)
 const reference = useReactive({ children: { number: 1 } })
-// 读取响应式对象
+// Read reactive object
 primitive()
-// 解构响应式对象
+// Destructure reactive object
 const { number } = reference.children
-// 修改响应式对象
-// 通过直接传入新值
+// Modify reactive object
+// By directly passing new value
 reference({ children: { number: 2 } })
-// 通过传入函数，获取到当前值并返回新值
+// By passing function that receives current value and returns new value
 number((i) => i + 1)
 ```

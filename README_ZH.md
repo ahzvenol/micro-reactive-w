@@ -10,10 +10,28 @@
 - 任意解构对象，替换对象，而不会丢失响应式
 - 通过包装框架原生API实现，无学习成本
 
+## 安装
+
+Solid：
+
+```
+npm i micro-reactive-solid
+pnpm i micro-reactive-solid
+yarn add i micro-reactive-solid
+```
+
+Vue:
+
+```
+npm i micro-reactive-vue
+pnpm i micro-reactive-vue
+yarn add i micro-reactive-vue
+```
+
 ## 使用
 
 ```ts
-import { useReactive } from 'micro-reactive-vue'
+import { useReactive } from "micro-reactive";
 
 // 创建响应式对象
 const primitive = useReactive(1)
