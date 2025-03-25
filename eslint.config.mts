@@ -6,6 +6,7 @@ export default tseslint.config(eslint.configs.recommended, tseslint.configs.reco
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
         '@typescript-eslint/consistent-type-imports': 'error',
-        '@typescript-eslint/no-for-in-array': 'error'
+        '@typescript-eslint/no-for-in-array': 'error',
+        '@typescript-eslint/no-unsafe-function-type': 'off'
     }
 })
