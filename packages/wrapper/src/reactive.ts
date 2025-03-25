@@ -1,4 +1,4 @@
-import { Reactive, Signal } from './types'
+import type { Reactive, Signal } from './types'
 
 /**
  * 创建信号函数，
@@ -68,5 +68,5 @@ export function createReactiveWrapper<T>(root: object, path: PropertyKey[]): Rea
  * @returns 响应式代理的创建函数
  */
 export function useReactiveWrapper<T>(proxy: Function): (value: T) => Reactive<T> {
-    return (value) => createReactiveWrapper(proxy([value]), [0]);
+    return (value) => createReactiveWrapper(proxy([value]), [0])
 }

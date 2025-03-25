@@ -1,5 +1,7 @@
-import { Reactive, Signal, useReactiveWrapper } from 'micro-reactive-wrapper'
-import { createSignal, SignalOptions } from 'solid-js'
+import type { Reactive, Signal } from 'micro-reactive-wrapper'
+import type { SignalOptions } from 'solid-js'
+import { useReactiveWrapper } from 'micro-reactive-wrapper'
+import { createSignal } from 'solid-js'
 import { createMutable } from 'solid-js/store'
 
 export function useSignal<T>(value: T, options?: SignalOptions<T>): Signal<T> {

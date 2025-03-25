@@ -2,22 +2,27 @@
     "name": "micro-reactive",
     "version": "1.0.0",
     "private": true,
+    "description": "A monorepo for micro-reactive projects",
     "packageManager": "pnpm@10.6.1",
+    "type": "module",
     "scripts": {
         "lint:fix": "npx pnpm recursive run lint:fix",
         "lint:prettier": "npx pnpm recursive run lint:prettier"
     },
     "devDependencies": {
-        "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
-        "@typescript-eslint/eslint-plugin": "^8.6.0",
-        "eslint": "^8.57.1",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1",
-        "prettier": "^3.3.3",
+        "@eslint/js": "^9.23.0",
+        "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+        "@typescript-eslint/eslint-plugin": "^8.28.0",
+        "@typescript-eslint/parser": "^8.28.0",
+        "eslint": "^9.23.0",
+        "eslint-config-prettier": "^10.1.1",
+        "eslint-plugin-prettier": "^5.2.4",
+        "jiti": "^2.4.2",
+        "prettier": "^3.5.3",
         "prettier-eslint": "^16.3.0",
-        "typescript": "^5.8.2",
         "tsup": "^8.4.0",
-        "vitest": "^0.23.4"
+        "typescript": "^5.8.2",
+        "typescript-eslint": "^8.28.0",
+        "vitest": "^3.0.9"
     }
 }
-

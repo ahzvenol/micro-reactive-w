@@ -1,8 +1,6 @@
 {
     "name": "micro-reactive-vue",
     "version": "1.0.0",
-    "license": "MIT",
-    "author": "灵弦",
     "description": "A functional-style reactive library for Vue.js with flexible destructuring support.",
     "keywords": [
         "reactive",
@@ -11,10 +9,15 @@
         "destructuring",
         "vue"
     ],
-    "files": [
-        "dist"
-    ],
+    "license": "MIT",
+    "author": "灵弦",
     "type": "module",
+    "scripts": {
+        "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
+        "test": "vitest run",
+        "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
+        "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
+    },
     "main": "dist/index.cjs",
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -28,16 +31,13 @@
             "import": "./dist/index.js"
         }
     },
+    "files": [
+        "dist"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ahzvenol/micro-reactive-w.git",
         "directory": "packages/vue"
-    },
-    "scripts": {
-        "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
-        "test": "vitest run",
-        "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
-        "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
     },
     "dependencies": {
         "micro-reactive-wrapper": "workspace:*"
@@ -49,4 +49,3 @@
         "vue": "^3.0.0"
     }
 }
-

@@ -1,8 +1,6 @@
 {
     "name": "micro-reactive-wrapper",
     "version": "1.0.0",
-    "license": "MIT",
-    "author": "灵弦",
     "description": "A functional-style reactive wrapper with flexible destructuring",
     "keywords": [
         "reactive",
@@ -10,10 +8,15 @@
         "store",
         "destructuring"
     ],
-    "files": [
-        "dist"
-    ],
+    "license": "MIT",
+    "author": "灵弦",
     "type": "module",
+    "scripts": {
+        "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
+        "test": "vitest run",
+        "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
+        "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
+    },
     "main": "dist/index.cjs",
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -27,16 +30,12 @@
             "import": "./dist/index.js"
         }
     },
+    "files": [
+        "dist"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ahzvenol/micro-reactive-w.git",
         "directory": "packages/wrapper"
-    },
-    "scripts": {
-        "build": "tsup src/index.ts --dts --format cjs,esm --minify --clean",
-        "test": "vitest run",
-        "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
-        "lint:prettier": "prettier --write \"src/**/*.+(js|ts|jsx|tsx|css|scss)\""
     }
 }
-

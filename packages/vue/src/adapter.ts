@@ -1,5 +1,7 @@
-import { Reactive, Signal, useReactiveWrapper } from 'micro-reactive-wrapper'
-import { reactive, Ref, ref, UnwrapRef } from 'vue'
+import type { Reactive, Signal } from 'micro-reactive-wrapper'
+import type { Ref, UnwrapRef } from 'vue'
+import { useReactiveWrapper } from 'micro-reactive-wrapper'
+import { reactive, ref } from 'vue'
 
 export function useSignal<T extends Ref>(value: T): Signal<UnwrapRef<T>>
 export function useSignal<T>(value: T): Signal<T>
